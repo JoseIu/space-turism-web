@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 interface Nav {
@@ -8,11 +9,12 @@ interface Nav {
 @Component({
   selector: 'header-component',
   standalone: true,
-  imports: [RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header-component.component.html',
   styleUrl: './header-component.component.scss',
 })
 export class HeaderComponentComponent {
+  public isOpen: boolean = false;
   public nav: Nav[] = [
     {
       path: 'home',
@@ -35,4 +37,11 @@ export class HeaderComponentComponent {
       number: ' 04',
     },
   ];
+
+  public closeMenu() {
+    this.isOpen = false;
+  }
+  public openMenu() {
+    this.isOpen = true;
+  }
 }

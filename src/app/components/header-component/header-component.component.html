@@ -3,7 +3,7 @@
     <img class="header__img" src="assets/shared/logo.svg" alt="logo" />
   </div>
 
-  <nav class="nav">
+  <nav class="nav" [ngClass]="isOpen ? 'nav--active' : ''">
     <ul class="nav__ul">
       @for (item of nav; track $index) {
 
@@ -11,12 +11,20 @@
         <a
           class="nav__link"
           [routerLink]="['/', item.path]"
-          [routerLinkActive]="['nav__link--active']"
+          [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }"
           ><span class="nav__number">{{ item.number }}</span> {{ item.name }}
         </a>
       </li>
       }
     </ul>
+
+    <button class="close-menu" (click)="closeMenu()">
+      <img src="assets/shared/icon-close.svg" alt="icon-hamburguer" />
+    </button>
   </nav>
+
+  <button class="open-menu" (click)="openMenu()">
+    <img src="assets/shared/icon-hamburger.svg" alt="icon-hamburguer" />
+  </button>
 </header>
