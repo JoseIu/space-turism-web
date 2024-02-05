@@ -1,0 +1,14 @@
+.home {
+  height: 100dvh;
+  background-image: url("/assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: 768px) {
+    background-image: url("/assets/home/background-home-tablet.jpg");
+  }
+  @media screen and (max-width: 411px) {
+    background-image: url("/assets/home/background-home-mobile.jpg");
+  }
+}
