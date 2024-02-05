@@ -22,9 +22,9 @@
 
   //mobile
   @media screen and (max-width: 650px) {
-    height: 100%;
+    height: 100dvh;
     padding: 7em 0 0 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -100%;
     transition: all 0.5s ease;

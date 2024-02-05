@@ -24,17 +24,17 @@ export class HeaderComponentComponent {
     {
       path: 'destination',
       name: 'Destination',
-      number: '02',
+      number: '01',
     },
     {
       path: 'crew',
       name: 'Crew',
-      number: ' 03',
+      number: ' 02',
     },
     {
       path: 'technology',
       name: 'Technology',
-      number: ' 04',
+      number: ' 03',
     },
   ];
 
