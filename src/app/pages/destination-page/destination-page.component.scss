@@ -1,0 +1,119 @@
+.destination {
+  min-height: 100dvh;
+  max-height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/destination/background-destination-desktop.jpg");
+  @media screen and (max-width: 768px) {
+    background-image: url("/assets/destination/background-destination-tablet.jpg");
+  }
+  @media screen and (max-width: 411px) {
+    background-image: url("/assets/destination/background-destination-mobile.jpg");
+  }
+
+  &__content {
+    position: relative;
+
+    padding: 1em;
+    height: 100%;
+    margin-top: 5em;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 5em;
+  }
+
+  &__title {
+    padding: 0 0 0 2em;
+    font-size: 1.75rem;
+    letter-spacing: 0.17rem;
+
+    display: flex;
+    column-gap: 0.3em;
+  }
+  &__number {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.25);
+  }
+}
+.carusel {
+  //   background-color: green;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  &__nav {
+    position: absolute;
+    top: 6em;
+    right: 31%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background-color: rebeccapurple;
+  }
+  &__link {
+    text-transform: uppercase;
+  }
+}
+.planets {
+  //   background-color: red;
+  width: 400%;
+  height: 100%;
+
+  display: flex;
+}
+.planet {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  justify-items: center;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__img {
+    //445px --- 170px
+    min-width: 170px;
+    max-width: 27.8125rem;
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+  }
+  &__name {
+    font-size: 6.25rem;
+  }
+  &__description {
+    font-size: 1.125rem;
+    line-height: 2rem;
+    width: 27.75rem;
+    padding-bottom: 3em;
+    border-bottom: 0.0625rem solid #383b4b;
+  }
+  &__infos {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+  }
+  &__info {
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 0.5em;
+    color: #d0d6f9;
+  }
+  &__data {
+    font-size: 1.75rem;
+    color: var(--third-color);
+  }
+}

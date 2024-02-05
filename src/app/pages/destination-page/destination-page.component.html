@@ -1,3 +1,45 @@
-<section class="wrapper">
+<section class="destination wrapper">
   <header-component />
+  <div class="destination__content">
+    <h2 class="destination__title">
+      <span class="destination__number">01</span>Pick your destination
+    </h2>
+    <nav class="carusel__nav">
+      @for (nav of destination; track $index) {
+      <button class="carusel__link">
+        {{ nav.name }}
+      </button>
+
+      }
+    </nav>
+    <div class="carusel">
+      <div class="planets">
+        @for (planet of destination; track $index) {
+
+        <article class="planet">
+          <img
+            class="planet__img"
+            [src]="planet.images.webp"
+            [alt]="planet.name"
+          />
+
+          <div class="planet__content">
+            <h3 class="planet__name">{{ planet.name }}</h3>
+            <p class="planet__description">{{ planet.description }}</p>
+            <div class="planet__infos">
+              <span class="planet__info">
+                avg. distance
+                <span class="planet__data"> {{ planet.distance }} </span>
+              </span>
+              <span class="planet__info">
+                est. travel time
+                <span class="planet__data"> {{ planet.travel }} </span>
+              </span>
+            </div>
+          </div>
+        </article>
+        }
+      </div>
+    </div>
+  </div>
 </section>
