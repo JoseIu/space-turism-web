@@ -1,0 +1,22 @@
+<header class="header">
+  <div class="header__logo">
+    <img class="header__img" src="assets/shared/logo.svg" alt="logo" />
+  </div>
+
+  <nav class="nav">
+    <ul class="nav__ul">
+      @for (item of nav; track $index) {
+
+      <li class="nav__li">
+        <a
+          class="nav__link"
+          [routerLink]="['/', item.path]"
+          [routerLinkActive]="['nav__link--active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ><span class="nav__number">{{ item.number }}</span> {{ item.name }}
+        </a>
+      </li>
+      }
+    </ul>
+  </nav>
+</header>
