@@ -11,4 +11,86 @@
   @media screen and (max-width: 411px) {
     background-image: url("/assets/home/background-home-mobile.jpg");
   }
+
+  &__content {
+    height: 100%;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+    justify-items: center;
+    align-items: end;
+    @media screen and (max-width: 950px) {
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  &__subtitle,
+  &__description {
+    color: var(--light-wite);
+  }
+  &__subtitle,
+  &__title {
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    font-size: 1.75rem;
+  }
+  &__title {
+    font-size: 9.375rem;
+  }
+  &__description {
+    line-height: 2rem;
+    width: 27.75rem;
+    font-size: 1.125rem;
+    @media screen and (max-width: 650px) {
+      line-height: 1.5rem;
+    }
+  }
+  &__explore {
+    // width: 9.375rem;
+    // height: 9.375rem;
+
+    width: 17.125rem;
+    height: 17.125rem;
+    font-size: 2rem;
+    background-color: var(--third-color);
+    border-radius: 50%;
+
+    color: var(--primary-color);
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: 0 0 0 6.125rem #f5f5f569;
+
+      border: 1px solid #979797;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 12.125rem;
+      height: 12.125rem;
+      &:hover {
+        box-shadow: 0 0 0 5.125rem #f5f5f569;
+
+        border: 1px solid #979797;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 9.375rem;
+      height: 9.375rem;
+      font-size: 1.5rem;
+      &:hover {
+        box-shadow: 0 0 0 3.125rem #f5f5f569;
+
+        border: 1px solid #979797;
+      }
+    }
+  }
 }

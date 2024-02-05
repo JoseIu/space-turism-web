@@ -10,6 +10,7 @@
   --primary-color: #0b0d17;
   --secundary-color: #d0d6f9;
   --third-color: #fff;
+  --light-wite: #d0d6f9;
 
   /* Tipografía */
   --tipo-principal: "Bellefair", serif, Helvetica, Arial, sans-serif;
@@ -127,6 +128,7 @@ svg {
 }
 
 body {
+  overflow: hidden;
   min-height: 100vh;
   font-size: 100%;
   font-family: var(--tipo-principal);
