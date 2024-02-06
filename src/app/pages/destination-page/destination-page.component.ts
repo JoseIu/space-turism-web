@@ -14,8 +14,9 @@ import { SpaceTurismServiceService } from '../../services/space-turism-service.s
 })
 export class DestinationPageComponent implements OnInit {
   private spaceTurismServiceService = inject(SpaceTurismServiceService);
-
   public destination?: Destination[];
+
+  public transformValue = '0%';
 
   ngOnInit(): void {
     this.spaceTurismServiceService.data$
@@ -24,5 +25,13 @@ export class DestinationPageComponent implements OnInit {
         this.destination = destinations;
         console.log('destinations', this.destination);
       });
+  }
+
+  public nextPlanet(index: number) {
+    console.log(index);
+    let position = index;
+    let opration = position * -25;
+
+    this.transformValue = `${opration}%`;
   }
 }
