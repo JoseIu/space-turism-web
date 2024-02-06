@@ -40,23 +40,20 @@
     text-transform: uppercase;
   }
   &__subtitle {
-    font-size: 1.75rem;
+    font-size: clamp(1.5rem, 2vw, 1.75rem);
   }
   &__title {
-    font-size: 9.375rem;
+    font-size: clamp(5rem, 8vw, 9.375rem);
   }
   &__description {
     line-height: 2rem;
-    width: 27.75rem;
+    max-width: 27.75rem;
     font-size: 1.125rem;
     @media screen and (max-width: 650px) {
       line-height: 1.5rem;
     }
   }
   &__explore {
-    // width: 9.375rem;
-    // height: 9.375rem;
-
     width: 17.125rem;
     height: 17.125rem;
     font-size: 2rem;
