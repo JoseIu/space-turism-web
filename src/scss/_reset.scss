@@ -3,6 +3,11 @@
   src: url("/assets/fonts/Bellefair-Regular.woff") format("woff");
   font-weight: 400;
 }
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("/assets/fonts/BarlowCondensed-Regular.woff") format("woff");
+  font-weight: 400;
+}
 
 :root {
   /* Colores */
@@ -129,6 +134,7 @@ svg {
 
 body {
   // overflow: hidden;
+
   min-height: 100vh;
   font-size: 100%;
   font-family: var(--tipo-principal);
