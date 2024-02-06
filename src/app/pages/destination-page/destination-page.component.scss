@@ -1,85 +1,119 @@
 .destination {
+  position: relative;
+
   min-height: 100dvh;
-  max-height: 100%;
+  height: 100%;
+
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-image: url("/assets/destination/background-destination-desktop.jpg");
   @media screen and (max-width: 768px) {
     background-image: url("/assets/destination/background-destination-tablet.jpg");
+    overflow: initial;
   }
   @media screen and (max-width: 411px) {
     background-image: url("/assets/destination/background-destination-mobile.jpg");
+    overflow: initial;
   }
 
   &__content {
-    position: relative;
+    font-family: "Barlow Condensed";
 
-    padding: 1em;
-    height: 100%;
-    margin-top: 5em;
+    padding: 10em 1em 1em 1em;
 
     display: flex;
     flex-direction: column;
-    row-gap: 5em;
+    justify-content: center;
+
+    row-gap: 2em;
   }
 
   &__title {
-    padding: 0 0 0 2em;
-    font-size: 1.75rem;
-    letter-spacing: 0.17rem;
+    padding: 0 0 0 6em;
 
-    display: flex;
-    column-gap: 0.3em;
+    font-size: clamp(1rem, 2vw, 1.75rem);
+    text-transform: uppercase;
+    letter-spacing: 0.17rem;
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      text-align: center;
+    }
   }
   &__number {
     font-weight: 600;
     color: rgba(255, 255, 255, 0.25);
   }
 }
+.content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9em;
+  z-index: 1;
+  @media screen and (max-width: 768px) {
+    position: relative;
+    top: 20em;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    &__void {
+      display: none;
+    }
+  }
+  &__nav {
+    display: flex;
+    padding: 0 0 0 1em;
+    align-items: center;
+
+    gap: 1em;
+    @media screen and (max-width: 768px) {
+      top: 32em;
+      padding: 0;
+    }
+  }
+  &__link {
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+}
 .carusel {
-  //   background-color: green;
+  max-width: 100%;
   width: 100%;
   height: 100%;
 
   overflow: hidden;
-  &__nav {
-    position: absolute;
-    top: 6em;
-    right: 31%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    background-color: rebeccapurple;
-  }
-  &__link {
-    text-transform: uppercase;
-  }
 }
 .planets {
-  //   background-color: red;
   width: 400%;
   height: 100%;
 
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  transition: all 0.5s ease;
+  transform: translateX(-50%);
 }
 .planet {
-  width: 100%;
+  width: calc(100% / 4);
+  min-height: 10vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2em;
-  justify-items: center;
+  justify-items: end;
   align-items: center;
+  gap: 9em;
 
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
   }
 
   &__img {
-    //445px --- 170px
-    min-width: 170px;
+    min-width: 10.625rem;
     max-width: 27.8125rem;
+    @media screen and (max-width: 768px) {
+      width: 10.625rem;
+    }
   }
 
   &__content {
@@ -87,14 +121,20 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.25rem;
+
+    @media screen and (max-width: 768px) {
+      align-items: center;
+    }
   }
   &__name {
+    font-family: "Bellefair";
     font-size: 6.25rem;
+    text-transform: uppercase;
   }
   &__description {
     font-size: 1.125rem;
     line-height: 2rem;
-    width: 27.75rem;
+    max-width: 27.75rem;
     padding-bottom: 3em;
     border-bottom: 0.0625rem solid #383b4b;
   }
@@ -102,8 +142,12 @@
     display: flex;
     align-items: center;
     gap: 2em;
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
   }
   &__info {
+    width: 100%;
     text-transform: uppercase;
     font-size: 0.875rem;
     display: flex;
@@ -111,9 +155,22 @@
 
     row-gap: 0.5em;
     color: #d0d6f9;
+
+    @media screen and (max-width: 768px) {
+      align-items: center;
+    }
   }
   &__data {
     font-size: 1.75rem;
     color: var(--third-color);
+    font-family: "Bellefair";
   }
 }
+// @media screen and (max-width: 768px) {
+//   background-image: url("/assets/destination/background-destination-tablet.jpg");
+//   overflow: initial;
+// }
+// @media screen and (max-width: 411px) {
+//   background-image: url("/assets/destination/background-destination-mobile.jpg");
+//   overflow: initial;
+// }

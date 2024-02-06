@@ -4,17 +4,23 @@
     <h2 class="destination__title">
       <span class="destination__number">01</span>Pick your destination
     </h2>
-    <nav class="carusel__nav">
-      @for (nav of destination; track $index) {
-      <button class="carusel__link">
-        {{ nav.name }}
-      </button>
+    <div class="content">
+      <div class="content__void"></div>
+      <nav class="content__nav">
+        @for (nav of destination; track $index;) {
+        <button class="content__link" (click)="nextPlanet($index)">
+          {{ nav.name }}
+        </button>
 
-      }
-    </nav>
+        }
+      </nav>
+    </div>
     <div class="carusel">
-      <div class="planets">
-        @for (planet of destination; track $index) {
+      <div
+        class="planets"
+        [style.transform]="'translateX(' + transformValue + ')'"
+      >
+        @for (planet of destination ; track $index) {
 
         <article class="planet">
           <img
