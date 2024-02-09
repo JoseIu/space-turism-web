@@ -28,7 +28,6 @@ export class DestinationPageComponent implements OnInit {
   }
 
   public nextPlanet(index: number) {
-    console.log(index);
     let position = index;
     let opration = position * -25;
 
