@@ -1,3 +1,36 @@
-<section class="wrapper">
+<section class="crew wrapper">
   <header-component />
+  <div class="crew__content">
+    <h2 class="crew__title">02 Meet your crew</h2>
+
+    <div class="carousel">
+      <nav class="carousel__nav">
+        @for (person of crew; track $index) {
+
+        <button class="carousel__button" (click)="nextPerson($index)"></button>
+        }
+      </nav>
+      <div
+        class="persons"
+        [style.transform]="'translateX(' + transformValue + ')'"
+      >
+        @for (person of crew; track $index) {
+
+        <article class="person">
+          <img
+            class="person__image"
+            [src]="person.images.webp"
+            [alt]="person.name"
+          />
+
+          <div class="person__info">
+            <p class="person__role">{{ person.role }}</p>
+            <h3 class="person__name">{{ person.name }}</h3>
+            <p class="person__description">{{ person.bio }}</p>
+          </div>
+        </article>
+        }
+      </div>
+    </div>
+  </div>
 </section>
