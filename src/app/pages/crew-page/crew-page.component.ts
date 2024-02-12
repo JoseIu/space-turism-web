@@ -17,6 +17,7 @@ export class CrewPageComponent implements OnInit {
 
   public crew?: Crew[];
   public transformValue = '0%';
+  public isActiveNav: number = 0;
 
   ngOnInit() {
     this.spaceTurismServiceService.data$
@@ -28,8 +29,8 @@ export class CrewPageComponent implements OnInit {
   }
 
   public nextPerson(index: number) {
-    console.log(index);
     let position = index;
+    this.isActiveNav = index;
     let opration = position * -25;
 
     this.transformValue = `${opration}%`;

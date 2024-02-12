@@ -67,6 +67,9 @@
       height: 0.7em;
     }
   }
+  &__button--active {
+    background-color: var(--third-color);
+  }
 }
 .persons {
   width: 400%;

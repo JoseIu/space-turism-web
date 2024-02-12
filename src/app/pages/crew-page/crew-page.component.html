@@ -7,7 +7,13 @@
       <nav class="carousel__nav">
         @for (person of crew; track $index) {
 
-        <button class="carousel__button" (click)="nextPerson($index)"></button>
+        <button
+          class="carousel__button"
+          [ngClass]="{
+            'carousel__button--active': isActiveNav === $index
+          }"
+          (click)="nextPerson($index)"
+        ></button>
         }
       </nav>
       <div
