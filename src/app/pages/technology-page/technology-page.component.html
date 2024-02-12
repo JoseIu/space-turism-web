@@ -1,50 +1,55 @@
 <section class="technology wrapper">
   <header-component />
-  <h2 class="technology__title">
-    <span class="technology__number">01</span>Pick your destination
-  </h2>
 
   <div class="technology__content">
-    <nav class="technology__nav">
-      @for (nav of technologys; track $index) {
+    <h2 class="technology__title">
+      <span class="technology__number">01</span>Pick your destination
+    </h2>
 
-      <button
-        class="technology__nav-button"
-        [ngClass]="{ 'technology__nav-button--active': isActiveNav === $index }"
-        (click)="nextTechnolgy($index)"
-      >
-        {{ $index + 1 }}
-      </button>
-      }
-    </nav>
+    <div class="technology__info">
+      <nav class="technology__nav">
+        @for (nav of technologys; track $index) {
 
-    <div class="carusel">
-      <div
-        class="technologys"
-        [style.transform]="'translateX(' + transformValue + ')'"
-      >
-        @for (tech of technologys; track $index) {
-
-        <article class="techno">
-          <div class="techno__content">
-            <span class="techno__subtitle">The terminology...</span>
-            <h2 class="techno__title">{{ tech.name }}</h2>
-            <p class="techno__description">{{ tech.description }}</p>
-          </div>
-
-          <picture>
-            <source
-              media="(min-width:768px)"
-              [attr.srcset]="tech.images.portrait"
-            />
-            <img
-              class="techno__img"
-              [src]="tech.images.landscape"
-              [alt]="tech.name"
-            />
-          </picture>
-        </article>
+        <button
+          class="technology__nav-button"
+          [ngClass]="{
+            'technology__nav-button--active': isActiveNav === $index
+          }"
+          (click)="nextTechnolgy($index)"
+        >
+          {{ $index + 1 }}
+        </button>
         }
+      </nav>
+
+      <div class="carusel">
+        <div
+          class="technologys"
+          [style.transform]="'translateX(' + transformValue + ')'"
+        >
+          @for (tech of technologys; track $index) {
+
+          <article class="techno">
+            <div class="techno__content">
+              <span class="techno__subtitle">The terminology...</span>
+              <h2 class="techno__title">{{ tech.name }}</h2>
+              <p class="techno__description">{{ tech.description }}</p>
+            </div>
+
+            <picture>
+              <source
+                media="(min-width:768px)"
+                [attr.srcset]="tech.images.portrait"
+              />
+              <img
+                class="techno__img"
+                [src]="tech.images.landscape"
+                [alt]="tech.name"
+              />
+            </picture>
+          </article>
+          }
+        </div>
       </div>
     </div>
   </div>
