@@ -33,9 +33,15 @@
     width: 100%;
     font-size: clamp(1.5rem, 2vw, 1.75rem);
     text-transform: uppercase;
+
+    display: flex;
+    gap: 0.5em;
     @media screen and (max-width: 768px) {
       text-align: center;
     }
+  }
+  &__number {
+    color: rgba(255, 255, 255, 0.25);
   }
 }
 
