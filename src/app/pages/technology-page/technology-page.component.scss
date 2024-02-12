@@ -1,0 +1,138 @@
+.technology {
+  min-height: 100dvh;
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/technology/background-technology-desktop.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: 768px) {
+    background-image: url("/assets/technology/background-technology-tablet.jpg");
+  }
+  @media screen and (max-width: 411px) {
+    background-image: url("/assets/technology/background-technology-mobile.jpg");
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    height: 85dvh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  &__nav {
+    width: 10em;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      height: auto;
+
+      flex-direction: row;
+
+      top: 49%;
+      width: 100%;
+      z-index: 1;
+    }
+    @media screen and (max-width: 600px) {
+      top: 40%;
+    }
+
+    &-button {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      outline: 0.0625rem solid var(--third-color);
+      color: var(--third-color);
+
+      cursor: pointer;
+
+      @media screen and (max-width: 768px) {
+        width: 2em;
+        height: 2em;
+      }
+    }
+    &-button--active {
+      background-color: var(--third-color);
+      color: var(--primary-color);
+    }
+  }
+}
+
+.carusel {
+  width: 100%;
+
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
+}
+.technologys {
+  width: 300%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  transition: all 0.5s ease;
+  transform: translateX(0%);
+  @media screen and (max-width: 768px) {
+    height: 100%;
+  }
+}
+.techno {
+  width: calc(100% / 3);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    height: 100%;
+    gap: 3em;
+  }
+  &__content {
+    @media screen and (max-width: 768px) {
+      order: 2;
+    }
+  }
+  &__subtitle,
+  &__description {
+    font-family: "Barlow Condensed";
+  }
+  &__subtitle,
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    // font-size: 1rem;
+    font-size: clamp(0.875rem, 3vw, 1rem);
+  }
+  &__title {
+    font-size: clamp(1.5rem, 3vw, 3.5rem);
+    // font-size: 3.5rem;
+  }
+  &__description {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+    // font-size: 1.125rem;
+    line-height: 2rem;
+    max-width: 27.75rem;
+  }
+  &__img {
+    max-width: 32.1875rem;
+    margin-left: auto;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+      order: 1;
+    }
+  }
+}
