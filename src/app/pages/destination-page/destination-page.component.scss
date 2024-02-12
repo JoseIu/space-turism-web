@@ -74,6 +74,10 @@
   &__link {
     cursor: pointer;
     text-transform: uppercase;
+    color: var(--light-wite);
+  }
+  &__link--active {
+    color: var(--third-color);
   }
 }
 .carusel {

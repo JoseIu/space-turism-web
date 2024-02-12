@@ -18,6 +18,8 @@ export class DestinationPageComponent implements OnInit {
 
   public transformValue = '0%';
 
+  public isActiveNav: number = 0;
+
   ngOnInit(): void {
     this.spaceTurismServiceService.data$
       .pipe(map((data) => data.destinations))
@@ -29,6 +31,7 @@ export class DestinationPageComponent implements OnInit {
 
   public nextPlanet(index: number) {
     let position = index;
+    this.isActiveNav = position;
     let opration = position * -25;
 
     this.transformValue = `${opration}%`;

@@ -8,7 +8,13 @@
       <div class="content__void"></div>
       <nav class="content__nav">
         @for (nav of destination; track $index;) {
-        <button class="content__link" (click)="nextPlanet($index)">
+        <button
+          class="content__link"
+          [ngClass]="{
+            'content__link--active': isActiveNav === $index
+          }"
+          (click)="nextPlanet($index)"
+        >
           {{ nav.name }}
         </button>
 
